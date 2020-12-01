@@ -40,6 +40,6 @@ namespace Fooddb.Domain.Model
         public int IngredientCategoryId { get; set; }
 
         public IngredientCategory Category { get; set; }
-        public List<RecipeIngredientListItem> Recipes { get; set; }
+        public ICollection<RecipeIngredientListItem> Recipes { get; set; }
     }
 }

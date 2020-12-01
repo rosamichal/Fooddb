@@ -34,6 +34,6 @@ namespace Fooddb.Domain.Model
         [Display(Name = "Opis")]
         public string Description { get; set; }
 
-        public List<RecipeIngredientListItem> Ingredients { get; set; }
+        public ICollection<RecipeIngredientListItem> Ingredients { get; set; }
     }
 }
