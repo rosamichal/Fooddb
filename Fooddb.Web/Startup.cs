@@ -34,6 +34,8 @@ namespace Fooddb.Web
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<Context>();
+
+            services.AddInfrastructure();
             services.AddControllersWithViews();
         }
 
