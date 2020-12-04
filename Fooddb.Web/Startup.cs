@@ -1,3 +1,4 @@
+using Fooddb.Application;
 using Fooddb.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,7 @@ namespace Fooddb.Web
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<Context>();
 
+            services.AddApplication();
             services.AddInfrastructure();
             services.AddControllersWithViews();
         }
