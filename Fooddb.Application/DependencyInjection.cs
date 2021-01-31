@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Fooddb.Application.Interfaces;
+using Fooddb.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,7 @@ namespace Fooddb.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
+            services.AddTransient<IIngredientService, IngredientService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }
