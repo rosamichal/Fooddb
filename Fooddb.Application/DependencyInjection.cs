@@ -13,7 +13,12 @@ namespace Fooddb.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddTransient<IIngredientService, IngredientService>();
+            //services.AddTransient<IIngredientService, IngredientService>();
+            services.Scan(scan => scan
+                .FromExecutingAssembly()
+                .AddClasses(classess => classess.Where(c => c.Name.EndsWith("Service")))
+                .AsImplementedInterfaces()
+                .WithTransientLifetime());
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }
